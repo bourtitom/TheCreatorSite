@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Salsa&display=swap');
+
 :root{
     --ColorLinkList:black;
-    --ColorPrincipal:rgb(5, 5, 111);
+    --ColorPrincipal:rgb(4, 4, 93);
     --ColorBack:rgb(0, 0, 54);
-    --ColorSecondary:rgb(169, 144, 0);
+    --ColorSecondary:rgb(255, 217, 0);
 }
 
 body{
     width: 100vw;
-    height: 100vh;
     box-sizing: border-box;
     margin: 0;
     background-color: var(--ColorPrincipal);
@@ -83,6 +83,7 @@ main{
 
 section{
     margin: 10% 0;
+        
 }
 #Teams div{
     display: flex;
