@@ -19,6 +19,10 @@ let devlogs = [
     {
         imgSrc: "feur.png",
         text: "Page d'inscription"
+    },
+    {
+        imgSrc: "gameplay.png",
+        text: "Petit Gameplay"
     }
 
 ];
