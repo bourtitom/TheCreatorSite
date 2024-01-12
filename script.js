@@ -1,17 +1,26 @@
 console.log('script launch...');
 let devlogs = [
     {
-        imgSrc: "téléchargement.jpeg",
-        text: "Création d'un Loading Screen"
+        imgSrc: "image.png",
+        text: "Loading Screen"
     },
     {
-        imgSrc: "b87e6e8821362242302c8bcfd54b04a0.png",
-        text: "Mise en place d'un Caracter Creator"
+        imgSrc: "ala.png",
+        text: "Page de Connexion"
     },
     {
-        imgSrc: "giphy.gif",
-        text: "Creation d'un Personnage basic avec des mouvements"
+        imgSrc: "creation_de_perso.png",
+        text: "Customisation de personnage"
+    },
+    {
+        imgSrc: "images.png",
+        text: "Mots de passe"
+    },
+    {
+        imgSrc: "feur.png",
+        text: "Page d'inscription"
     }
+
 ];
 
 let menu = document.getElementById('logsOne');
