@@ -1,28 +1,28 @@
 console.log('script launch...');
 let devlogs = [
     {
-        imgSrc: "image.png",
-        text: "Loading Screen"
+        imgSrc: "perso.png",
+        text: "Perso"
     },
     {
-        imgSrc: "ala.png",
-        text: "Page de Connexion"
+        imgSrc: "pnj.png",
+        text: "Personnage non joueur avec dialogue"
     },
     {
-        imgSrc: "creation_de_perso.png",
-        text: "Customisation de personnage"
+        imgSrc: "ui.png",
+        text: "nos ui (user interface)"
     },
     {
-        imgSrc: "images.png",
-        text: "Mots de passe"
+        imgSrc: "multi.png",
+        text: "un systeme de multijoueur"
     },
     {
-        imgSrc: "feur.png",
-        text: "Page d'inscription"
+        imgSrc: "mob.png",
+        text: "des enemies avec une ia avancé"
     },
     {
-        imgSrc: "gameplay.png",
-        text: "Petit Gameplay"
+        imgSrc: "boss.png",
+        text: "des boss de donjon avec des mecaniques"
     }
 
 ];
