@@ -4,70 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Creator</title>
-    <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/60f5542750.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="asetts/css/style.css">
+
 </head>
 <body>
+    
     <header>
-        <img id="logo" src="notre_logo.png" alt="notre logo de the creator">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#Teams">Teams</a></li>
-            <li><a href="load.html">Games</a></li>
-        </ul>
+        <img src="asetts/img/image.png" alt="le logo the creator">
+        <nav>
+            <ul>
+                <li><i class="fa-solid fa-house"></i> Home</li>
+                <li><i class="fa-solid fa-display"></i> Game</li>
+            </ul>
+        </nav>
     </header>
     <main>
-                    <!-- HOME -->
-
-        <section id="Carrousel">
-            <h2>Dev Logs :</h2>
+        <section id="SectHead">
             <div>
-                <span id="prev"><</span>
-                <article id="logsOne">
-    
-                    <div id="logsOne" class="carousel"></div>
-
+                <h1><span>THE CREATOR</span><br>ROLEPLAY GAMES</h1>
+                <p>un petit rpg créer par antony et moi 
+                    pour le labday de la coding factory</p>
+                    <div id="xd">*</div>
+                <a class="btn-9" href="">PLAY</a>
+            </div>
+            <img src="asetts/img/portal.png" alt="">
+        </section>
+        <section id="SectDBook">
+            <h2>DEV BOOK :</h2>
+            <div id="ContentCarr">
+                <article>
+                    <div>
+                        <h3>SEMAINE 1</h3>
+                        <p>
+                            Lors de cette première semaine, nous avons eu une idée. 
+                            C'était la création d'un bot Discord pour 
+                            faciliter le roleplay des serveurs Discord.
+                        </p>
+                    </div>
+                    <img src="asetts/img/ddd.png" alt="">
                 </article>
-                <span id="next">></span>
+                <ul>
+                    <li>•</li>
+                    <li>•</li>
+                    <li>•</li>
+                    <li>•</li>
+                    <li>•</li>
+                </ul>
             </div>
         </section>
+        <section id="SectEkip">
+            <h2>équipe : </h2>
 
-        <section id="Teams">
-            <h2>TEAMS :</h2>
             <div>
                 <article>
-                    <img src="b87e6e8821362242302c8bcfd54b04a0.png" alt="">
-                    <p>Anto</p>
+                    <img src="asetts/img/tom.png" alt="">
+                    <h3>Tom</h3>
+                    <cite>“Mon coeur et mon épée appartiennent au JS”</cite>
+                    <div></div>
+                    <a class="btn-9" href="">Github</a>
+
                 </article>
                 <article>
-                    <img src="giphy.gif" alt="">
-                    <p>Kiria</p>
+                    <img src="asetts/img/anto.png" alt="">
+                    <h3>Antony</h3>
+                    <cite>“Mon coeur et mon épée appartiennent au JS”</cite>
+                    <div></div>
+                    <a class="btn-9" href="">Github</a>
                 </article>
-                <article>
-                    <img src="jonas.jpeg" alt="">
-                    <p>Hearly</p>
-                </article>
-    
             </div>
         </section>
-        <section id="School">
-            <h2>The School :</h2>
+        <section id="SectSchool">
+            <h2>Notre école :</h2>
             <article>
                 <div>
-                    <img src="coding_factory_esiee_it_logo.jpeg" alt="">
-                    <a href="https://codingfactory.fr/">Rejoindre</a>
+                    <img src="asetts/img/coding.png" alt="">
+                    <a class="btn-9" href="">Info+</a>
                 </div>
                 <div>
                     <h3>Coding Factory</h3>
-                    <p>Notre projet consiste en la création d'un MMORPG (Massively Multiplayer Online Role-Playing Game) au sein de mon école de code. En l'espace de cinq semaines, On va concevoir et développer un univers virtuel immersif où les joueurs peuvent interagir, explorer et accomplir des quêtes ensemble. Le jeu inclura des éléments de conception de monde, de programmation serveur-client, de gestion de base de données et d'expérience utilisateur. L'objectif est de présenter un prototype fonctionnel démontrant les compétences acquises en programmation et en conception de jeux en ligne au terme de cette période.</p>
+                    <p>
+                        Notre projet consiste en la création d'un MMORPG (Massively Multiplayer Online Role-Playing Game) au sein de mon école de code. 
+                        En l'espace de cinq semaines, On va concevoir et développer un univers virtuel immersif où les joueurs peuvent interagir, explorer et accomplir des quêtes ensemble. 
+                        Le jeu inclura des éléments de conception de monde, de programmation serveur-client, de gestion de base de données et d'expérience utilisateur. 
+                        L'objectif est de présenter un prototype fonctionnel démontrant les compétences acquises en programmation et en conception de jeux en ligne au terme de cette période.
+                    </p>
                 </div>
-    
             </article>
         </section>
     </main>
-
     <footer>
-        <p> &copy; COPYRIGHT , TDR tous droit résérver </p>
+        <div>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-discord"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+        <p>&copy; Copyright 2024 TheCreator. Tous droits réservés.</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        var listItems = document.querySelectorAll('#SectDBook ul li');
+    
+        listItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                listItems.forEach(function(li) {
+                    li.classList.remove('activeli');
+                });
+                this.classList.add('activeli');
+            });
+        });
+    
+        listItems[0].classList.add('activeli');
+    </script>
+    <script src="asetts/js/script.js"></script>
 </body>
 </html>
