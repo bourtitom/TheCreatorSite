@@ -168,26 +168,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ajouter un gestionnaire d'événement à chaque article
     articles.forEach(function(article, index) {
         article.addEventListener("click", function() {
-            // Si l'article actuel est visible
-            if (article.style.visibility === "visible") {
+            // Si l'article actuel est flex
+            if (article.style.display === "flex") {
                 // Masquer l'article actuel
-                article.style.visibility = "hidden";
-                article.style.opacity = 0;
+                article.style.display = "none";
                 // Si l'article actuel n'est pas le dernier, afficher le suivant
                 if (index < articles.length - 1) {
-                    articles[index + 1].style.visibility = "visible";
-                    article.style.opacity = 1;
+                    articles[index + 1].style.display = "flex";
                 } else { // Si c'est le dernier article, afficher le premier
-                    articles[0].style.visibility = "visible";
-                    article.style.opacity = 1;
+                    articles[0].style.display = "flex";
 
                 }
             } else { // Si l'article actuel est masqué, l'afficher
                 articles.forEach(function(article) {
-                    article.style.visibility = "hidden";
-                    article.style.opacity = 0;
+                    article.style.display = "none";
                 });
-                article.style.visibility = "visible";
+                article.style.display = "flex";
 
             }
         });
