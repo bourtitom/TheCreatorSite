@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 :root{
     --CBP: #042247;
     --CBS: #FFD166;
@@ -8,7 +10,7 @@
 body{
     background-color: var(--CBP);
     color: var(--CTP);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Outfit", sans-serif;
     font-size: 1.2em;
     line-height: 1.6;
     margin: 0;
@@ -34,6 +36,7 @@ header nav{
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 13px 19px 11px;
     color: var(--CTS);
+    font-weight: bold;
 
 }
 header nav ul{
