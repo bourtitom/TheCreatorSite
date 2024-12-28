@@ -5,8 +5,34 @@
     --CBS: #FFD166;
     --CTP: #fff;
     --CTS: #896A04;
+    --transition: all 0.3s ease-in-out;
+    --border-radius: 12px;
 }
 
+/* Animations globales */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation du portail */
+.portal-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Styles de base */
 body{
     background-color: var(--CBP);
     color: var(--CTP);
@@ -31,13 +57,12 @@ header {
 
 }
 header nav{
-    width: 20%;
     background-color: var(--CBS);
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.24) 13px 19px 11px;
+    border-radius: var(--border-radius);
+    box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
     color: var(--CTS);
     font-weight: bold;
-
+    padding: 0px 15px;
 }
 header nav ul{
     display: flex;
@@ -48,6 +73,10 @@ header nav ul{
 header nav ul a{
     text-decoration: none;
     color: var(--CTS);
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    padding: 3px 10px;
+    line-height: 1.2;
 }
 /************ MAIN ************/
 #Imain{
@@ -58,10 +87,10 @@ h2{
     text-transform: uppercase;
     color: var(--CBS);
     text-align: center;
-    margin: 5% 0;
+    margin: 3% 0;
 }
 section{
-    margin: 10% 0;
+    margin: 40px 0;
 
 }
 
@@ -75,16 +104,24 @@ section{
 }
 #SectHead h1 {
     font-size: 3rem;
-    margin-bottom: 0%;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 .btn-9{
-    background: linear-gradient(to right,#0029FF, var(--CBS));
+    background: linear-gradient(to right, #0029FF, var(--CBS));
     text-decoration: none;
     color: var(--CTP);
-    border-radius: 30px;
-    padding: 3% 12%;
-    font-size: 2rem;
+    border-radius: var(--border-radius);
+    padding: 8px 25px;
+    font-size: 1.3rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
+
+.btn-9:hover {
+    transform: translateY(-2px);
+}
+
 #SectHead p{
     width: 90%;
 }
@@ -104,7 +141,7 @@ section{
 
 #SectDBook h2{
     text-align: center;
-    margin: 5% 0;
+    margin: 3% 0;
 }
 #SectDBook #ContentCarr{
     display: flex;
@@ -122,8 +159,8 @@ section{
 }
 #SectDBook div article div{
     width: 80%;
-    border-radius: 30px;
-    padding: 3%;
+    border-radius: var(--border-radius);
+    padding: 15px;
     margin: 2%;
     margin-bottom: 0;
 }
@@ -146,11 +183,11 @@ section{
 }
 #SectDBook div:nth-child(2){
     width: 50%;
-    border-radius: 30px;
+    border-radius: var(--border-radius);
 }
 #SectDBook div img{
     width: 100%;
-    border-radius: 30px;
+    border-radius: var(--border-radius);
 }
 
 .activeli {
@@ -175,8 +212,8 @@ section{
     margin-bottom: 10%;
 }
 #SectEkip .btn-9{
-    padding: 3% 5%;
-    font-size: 1.5rem;
+    padding: 6px 20px;
+    font-size: 1.1rem;
 }
 
 /************ SECTION SCHOOL ************/
@@ -204,11 +241,6 @@ section{
     border-radius: 50%;
 }
 
-#SectSchool .btn-9{
-    padding: 2% 8%;
-    font-size: 1.5rem;
-}
-
 /************ SECTION DL ************/
 #SectDL{
     display: flex;
@@ -218,7 +250,7 @@ section{
 }
 
 #SectDL a {
-    padding: 15% 15%;
+    padding: 15px 30px;
     font-size: 1rem;
 }
 /************ SECTION img ************/
@@ -236,7 +268,7 @@ section{
   .slides img {
     width: 30%;
     height: auto;
-    border-radius: 30px;
+    border-radius: var(--border-radius);
     margin: 0% 2%;
   }
   
@@ -266,7 +298,7 @@ footer a{
 footer div {
     background-color: var(--CBS);
     width: 30%;
-    border-radius: 20px 20px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     box-shadow: rgba(0, 0, 0, 0.24) 13px 19px 11px;
     margin:auto;
 
@@ -281,9 +313,507 @@ footer div ul{
 }
 footer p{
     background-color: var(--CBS);
-    border-radius: 30px;
+    border-radius: var(--border-radius);
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 13px 19px 11px;
     padding: 4% 3%;
     margin: 0;
+}
+
+/* Carrousel amélioré */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--CBS);
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--CBP);
+    z-index: 10;
+}
+
+.carousel-nav.prev {
+    left: -50px;
+}
+
+.carousel-nav.next {
+    right: -50px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--CBS);
+    background: transparent;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: var(--CBS);
+}
+
+#ContentCarr {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #Imain {
+        width: 90%;
+    }
+
+    header img {
+        width: 15%;
+    }
+
+    header nav {
+        width: 50%;
+    }
+
+    #SectHead {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #SectHead h1 {
+        font-size: 2rem;
+    }
+
+    #SectDBook div article {
+        flex-direction: column;
+    }
+
+    #SectEkip div {
+        flex-direction: column;
+    }
+
+    #SectSchool article {
+        flex-direction: column;
+    }
+
+    .carousel-nav {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Désactiver les animations sur mobile */
+    .hidden {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .show {
+        opacity: 1;
+        transform: none;
+    }
+
+    .portal-animation {
+        animation: none;
+    }
+}
+
+/* Bouton amélioré avec effet néon */
+.btn-9 {
+    position: relative;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, var(--CBS), #FFB52E);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 209, 102, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-9::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FFB52E, var(--CBS));
+    z-index: -1;
+    transition: 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.btn-9:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-9:hover {
+    color: var(--CBP);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 209, 102, 0.5);
+}
+
+/* Animation des cartes équipe améliorée */
+#SectEkip article {
+    transition: all 0.5s ease;
+    position: relative;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#SectEkip article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 209, 102, 0.1));
+    border-radius: var(--border-radius);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#SectEkip article:hover::before {
+    opacity: 1;
+}
+
+#SectEkip article:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+#SectEkip article img {
+    transition: 0.5s;
+    filter: grayscale(50%);
+}
+
+#SectEkip article:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Animation du header */
+header nav {
+    background: linear-gradient(45deg, var(--CBS), #FFB52E);
+    border-radius: 12px;
+    padding: 0px 25px;
+    box-shadow: 0 8px 32px rgba(255, 209, 102, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+header nav:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(255, 209, 102, 0.3);
+}
+
+header nav ul a {
+    font-weight: bold;
+    position: relative;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+header nav ul a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--CBP);
+}
+
+/* Animation du titre principal */
+#SectHead h1 {
+    position: relative;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 209, 102, 0.2),
+                     0 0 10px rgba(255, 209, 102, 0.2),
+                     0 0 15px rgba(255, 209, 102, 0.2);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 209, 102, 0.4),
+                     0 0 20px rgba(255, 209, 102, 0.4),
+                     0 0 30px rgba(255, 209, 102, 0.4);
+    }
+}
+
+/* Carrousel amélioré */
+.carousel-nav {
+    background: linear-gradient(45deg, var(--CBS), #FFB52E);
+    border-radius: var(--border-radius);
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 5px 15px rgba(255, 209, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+
+
+.carousel-dot {
+    width: 15px;
+    height: 15px;
+    border: none;
+    background: rgba(255, 209, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--CBS);
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 209, 102, 0.5);
+}
+
+/* Animation des sections */
+section {
+    margin: 100px 0 !important;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50px);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Footer amélioré */
+footer ul li a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, var(--CBS), #FFB52E);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+footer ul li a:hover {
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
+}
+
+footer ul li a i {
+    font-size: 1.2em;
+    color: var(--CBP);
+    transition: all 0.3s ease;
+}
+
+/* Media Queries pour Tablettes */
+@media screen and (max-width: 1024px) {
+    header img {
+        width: 10%;
+    }
+
+    header nav {
+        width: 30%;
+    }
+
+    #Imain {
+        width: 90%;
+    }
+
+    #SectHead {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #SectHead h1 {
+        font-size: 2.5rem;
+    }
+
+    #SectDBook div article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #SectDBook ul {
+        width: 40%;
+    }
+}
+
+/* Media Queries pour Mobiles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    header img {
+        width: 40px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+    }
+
+    header nav {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    #SectHead {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #SectHead img {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    #SectHead h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    #SectHead p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .btn-9 {
+        font-size: 1rem;
+        padding: 8px 20px;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+        width: fit-content;
+    }
+}
+
+/* Ajustements pour très petits écrans */
+@media screen and (max-width: 480px) {
+    header nav {
+        width: 55%;
+        margin: 5px auto;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 8px;
+    }
+
+    header nav ul li {
+        margin: 2px 5px;
+    }
+
+    header nav ul a {
+        font-size: 0.9em;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+
+    #SectHead img {
+        width: 90%;
+    }
+
+    #SectHead h1 {
+        font-size: 1.6rem;
+        margin-top: 10px;
+    }
+}
+
+/* Styles pour le carrousel mobile */
+@media screen and (max-width: 768px) {
+    #ContentCarr {
+        position: relative;
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    #ContentCarr::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+    }
+
+    #ContentCarr.mobile-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0;
+        padding-bottom: 40px;
+    }
+
+    #ContentCarr.mobile-carousel article {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    #ContentCarr.mobile-carousel article div {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #ContentCarr.mobile-carousel article div img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--CTP);
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
+
+    .carousel-dot.active {
+        opacity: 1;
+        background-color: var(--CBS);
+    }
 }

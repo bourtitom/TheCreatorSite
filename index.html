@@ -7,12 +7,10 @@
     <script src="https://kit.fontawesome.com/60f5542750.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/img/image.png">
-
 </head>
 <body>
-    
     <header>
-        <a href="index.html">
+        <a href="index.html" class="logo-link">
             <img src="assets/img/image.png" alt="le logo the creator">
         </a>
         <nav>
@@ -28,13 +26,11 @@
                 <h1><span>THE CREATOR</span><br>ROLEPLAY GAMES</h1>
                 <p>un petit rpg créer par antony et moi 
                     pour le labday de la coding factory</p>
-                    <div id="xd">*</div>
+                <div id="xd">*</div>
                 <a class="btn-9" href="views/game.html">PLAY</a>
             </div>
             <div>
-            <div>
-                <img src="assets/img/portal.png" alt="">
-            </div>
+                <img src="assets/img/portal.png" alt="Portal animation" class="portal-animation">
             </div>
         </section>
         <section id="SectDBook">
@@ -103,26 +99,25 @@
         </section>
         
         <section id="SectEkip">
-            <h2>équipe : </h2>
-
+            <h2>équipe :</h2>
             <div>
                 <article>
-                    <img src="assets/img/tom.png" alt="">
+                    <img src="assets/img/tom.png" alt="Tom">
                     <h3>Tom</h3>
-                    <cite>“Mon coeur et mon épée appartiennent au JS”</cite>
+                    <cite>"Mon coeur et mon épée appartiennent au JS"</cite>
                     <div></div>
                     <a class="btn-9" href="https://github.com/bourtitom" target="_blank">Github</a>
-
                 </article>
                 <article>
-                    <img src="assets/img/anto.png" alt="">
+                    <img src="assets/img/anto.png" alt="Antony">
                     <h3>Antony</h3>
-                    <cite>“A vaincre sans péril, on triomphe sans gloire.”</cite>
+                    <cite>"A vaincre sans péril, on triomphe sans gloire."</cite>
                     <div></div>
                     <a class="btn-9" href="https://github.com/antonydias22" target="_blank">Github</a>
                 </article>
             </div>
         </section>
+        
         <section id="SectSchool">
             <h2>Notre école :</h2>
             <article>
@@ -143,6 +138,7 @@
         </section>
 
     </main>
+    
     <footer>
         <div>
             <ul>
@@ -153,56 +149,8 @@
         </div>
         <p>&copy; Copyright 2024 TheCreator. Tous droits réservés.</p>
     </footer>
-    <script>
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Récupérer tous les articles
-    var articles = document.querySelectorAll("#ContentCarr article");
-    
-    // Cacher tous les articles sauf le premier
-    for (var i = 1; i < articles.length; i++) {
-        articles[i].style.display = "none";
-    }
-    
-    // Ajouter un gestionnaire d'événement à chaque article
-    articles.forEach(function(article, index) {
-        article.addEventListener("click", function() {
-            // Si l'article actuel est flex
-            if (article.style.display === "flex") {
-                // Masquer l'article actuel
-                article.style.display = "none";
-                // Si l'article actuel n'est pas le dernier, afficher le suivant
-                if (index < articles.length - 1) {
-                    articles[index + 1].style.display = "flex";
-                } else { // Si c'est le dernier article, afficher le premier
-                    articles[0].style.display = "flex";
-
-                }
-            } else { // Si l'article actuel est masqué, l'afficher
-                articles.forEach(function(article) {
-                    article.style.display = "none";
-                });
-                article.style.display = "flex";
-
-            }
-        });
-    });
-});
-
-
-        var listItems = document.querySelectorAll('#SectDBook ul li');
-    
-        listItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                listItems.forEach(function(li) {
-                    li.classList.remove('activeli');
-                });
-                this.classList.add('activeli');
-            });
-        });
-    
-        listItems[0].classList.add('activeli');
-    </script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/mobile-carousel.js"></script>
 </body>
 </html>
